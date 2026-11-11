@@ -1,10 +1,16 @@
-export function calcBmi(height, weight){
+import { bmiRules } from "./rules"
+
+export function calcBmi(height, weight) {
 
     if (!Number(height) || !Number(weight)) {
-       // alert("Kérlek add meg a testsúlyodat és a magasságodat!");
         return "Helytelen érték!"
     }
     const magassagM = height / 100
     const bmi = weight / (magassagM * magassagM)
-    return  `A BMI indexed: ${bmi.toFixed(2)}`
+    return `A BMI indexed: ${bmi.toFixed(2)}`
+}
+
+export function findCategories(result) {
+    const matchedRule = bmiRules.find(rule => result >= rule.min && result < rule.max)
+    return matchedRule
 }
