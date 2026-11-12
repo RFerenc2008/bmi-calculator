@@ -7,7 +7,7 @@ export function calcBmi(height, weight) {
     }
     const magassagM = height / 100
     const bmi = weight / (magassagM * magassagM)
-    return `A BMI indexed: ${bmi.toFixed(2)}`
+    return Number(bmi.toFixed(2))
 }
 
 export function findCategories(result) {

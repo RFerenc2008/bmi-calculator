@@ -8,9 +8,16 @@ window.kattlikatt = function kattlikatt() {
     const result = calcBmi(height, weight)
 
     const eredmenyDiv = document.getElementById("eredmeny")
-    eredmenyDiv.textContent = result
     const rule = findCategories(result)
-    if (rule) {
+    const kartyak = [result].map(obj => `<div class="kartya">A BMI indexed: ${obj} <br>
+        ${rule.category} <br>
+        ${rule.message}
+        </div>`);
+    eredmenyDiv.innerHTML = kartyak.join("");
+    
+    /*if (rule) {
         console.log("Kategória: ", rule.category);
-    }
+    }*/
+    document.getElementById("kg").value = ""
+    document.getElementById("cm").value = ""
 }
