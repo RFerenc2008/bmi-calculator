@@ -3,7 +3,10 @@ import { bmiRules } from "./rules"
 export function calcBmi(height, weight) {
 
     if (!Number(height) || !Number(weight)) {
-        return "Helytelen érték!"
+        throw new Error('Helytelen érték')
+    }
+    if(height<=0 || weight <=0){
+        throw new Error('0-nál többnek kell lennie az értékeknek')
     }
     const magassagM = height / 100
     const bmi = weight / (magassagM * magassagM)
