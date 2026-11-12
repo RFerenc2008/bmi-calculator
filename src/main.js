@@ -1,3 +1,5 @@
+import { renderCards } from "./render";
+import { bmiRules } from "./rules";
 import './style.css'
 import { calcBmi, findCategories } from "./util"
 
